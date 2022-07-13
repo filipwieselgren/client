@@ -15,6 +15,7 @@ const App = () => {
         <ChannelListContainer></ChannelListContainer>
         <ChannelContainer></ChannelContainer>
       </Chat>
+      {/* "https://www.youtube.com/watch?v=MJzbJQLGehs&t=13s&ab_channel=JavaScriptMastery" 33:30 */}
     </div>
   );
 };
