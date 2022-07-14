@@ -1,4 +1,4 @@
-import { ChannelList } from "stream-chat-react";
+import { ChannelList, ChannelListMessengerProps } from "stream-chat-react";
 import HospitalIcon from "../assets/hospital.png";
 import LogoutIcon from "../assets/logout.png";
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from "./";
@@ -33,8 +33,22 @@ const ChannelListContainer = () => {
         <ChannelSearch />
         <ChannelList
           filters={{}}
-          channelRenderFilterFn={(): any => {}}
-          List={(listProps: any) => <TeamChannelList {...listProps} />}
+          channelRenderFilterFn={() => {}}
+          List={(listProps) => <TeamChannelList {...listProps} type="team" />}
+          Preview={(previewProps) => (
+            <TeamChannelPreview {...previewProps} type="team" />
+          )}
+        />
+
+        <ChannelList
+          filters={{}}
+          channelRenderFilterFn={() => {}}
+          List={(listProps) => (
+            <TeamChannelList {...listProps} type="messaging" />
+          )}
+          Preview={(previewProps) => (
+            <TeamChannelPreview {...previewProps} type="messaging" />
+          )}
         />
       </div>
     </>
